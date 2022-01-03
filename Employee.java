@@ -1,28 +1,37 @@
-package generic;
+package springcore_example;
+
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.context.annotation.ImportResource;
 
 public class Employee {
-String name;
-int id;
-String department;
-int salary;
-public Employee(String name,int id,String department,int salary) {
-	this.name=name;
-	this.id=id;
-	this.department=department;
-	this.salary=salary;
-}
-public int hashcode()
-{
-	return id;
+	private String id;
+	private String name;
+	@ImportResource(name="mycompany")
+	@Inject
+	private Company company;
 	
-}
-public boolean equals(Object obj) {
-	Employee employee = (Employee) obj;
-	return(id==employee.id);
-}
-public String toString()
-{
-	return id+","+name+","+department+","+salary;
-}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id=id;
+	}
+	public String getName() {
+		return name;
+	}@Required
+	public void setName(String name) {
+		this.name=name;
+	}
+	public Company getCompany() {
+		return company;
+	}@SuppressWarnings("deprecation")
+	@Required
+	public void setCompany(Company company) {
+		this.company=company;
+	}
+	@Override
+	public String toString() {
+		return "Employee [id="+id+",name="+name+",company="+company.toString() +"]";
+	}
 
 }

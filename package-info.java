@@ -1,1 +1,1 @@
-package singleton;
+package springcore_example;

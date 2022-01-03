@@ -5,15 +5,15 @@ import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-public class Test1 {
-	
-	public static void main(String[] args) {  
-	    Resource r=new ClassPathResource("beans.xml");  
+public class Test {
+
+	public static void main(String[] args) {
+		Resource r=new ClassPathResource("beans1.xml");  
 	    BeanFactory factory=new XmlBeanFactory(r);  
 	      
-	    Customer c=(Customer)factory.getBean("obj");  
-	    c.displayInfo();  
-	      
-	}  
+	    Question q=(Question)factory.getBean("q");  
+	    q.displayInfo();
+
+	}
 
 }
