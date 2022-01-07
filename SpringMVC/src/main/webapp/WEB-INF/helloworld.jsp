@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>welcome</title>
+<title>welcome page</title>
 </head>
 <body>
-<a href="helloworld.jsp">clickhere</a>
+<h1>Hello World</h1>
 </body>
 </html>
